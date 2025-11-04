@@ -79,7 +79,9 @@
             <td><?= $data['nama_kategori']; ?></td>
             <td><?= $data['ket_kategori']; ?></td>
             <td>Ubah</td>
-            <td>Hapus</td>
+            <td>
+              <a href="<?= "hapus.php?id_kategori=".$data['id_kategori']; ?>" class="btn btn-danger">Hapus</a>
+            </td>
          </tr>
       <?php
           }   
