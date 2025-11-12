@@ -78,8 +78,67 @@
             <td><?= $nomor++; ?></td>
             <td><?= $data['nama_kategori']; ?></td>
             <td><?= $data['ket_kategori']; ?></td>
+<<<<<<< Updated upstream
             <td>Ubah</td>
             <td>Hapus</td>
+=======
+            <td>
+              <!-- Awal Modal Ubah -->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalubah<?= $nomor; ?>">
+                  Ubah
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade"
+                id="modalubah<?= $nomor; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Ubah Data</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        Formulir
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <!-- Akhir Modal Ubah -->
+            </td>
+
+            <td>
+              <!-- Awal Modal Hapus -->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalhapus">
+                  Hapus
+                </button>
+
+                <!-- Modal Hapus -->
+                <div class="modal fade" id="modalhapus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus Kategori</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        Apakah kamu yakin ingin menghapus kategori <b> <?= $data['nama_kategori']; ?> </b>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <!-- Akhit Modal Hapus -->
+            </td>
+>>>>>>> Stashed changes
          </tr>
       <?php
           }   
