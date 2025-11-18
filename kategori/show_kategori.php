@@ -15,7 +15,7 @@
       <hr>
       <!-- Awal Tombol Tambah Kategori - Modal -->
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Tambah Kategori
       </button>
 
@@ -59,7 +59,7 @@
         $sql_eksekusi = mysqli_query($koneksi, $sql);
       ?>
       <table class="table">
-        <thead>
+        <thead class="table-dark">
           <tr>
             <th>No</th>
             <th>Nama Kategori</th>
@@ -78,10 +78,6 @@
             <td><?= $nomor++; ?></td>
             <td><?= $data['nama_kategori']; ?></td>
             <td><?= $data['ket_kategori']; ?></td>
-<<<<<<< Updated upstream
-            <td>Ubah</td>
-            <td>Hapus</td>
-=======
             <td>
               <!-- Awal Modal Ubah -->
                 <!-- Button trigger modal -->
@@ -138,7 +134,6 @@
                 </div>
               <!-- Akhit Modal Hapus -->
             </td>
->>>>>>> Stashed changes
          </tr>
       <?php
           }   
