@@ -58,13 +58,8 @@
         $sql = "SELECT * FROM tb_kategori";
         $sql_eksekusi = mysqli_query($koneksi, $sql);
       ?>
-<<<<<<< Updated upstream
-      <table class="table">
-        <thead>
-=======
       <table class="table mt-3">
         <thead class="table-dark">
->>>>>>> Stashed changes
           <tr>
             <th>No</th>
             <th>Nama Kategori</th>
@@ -83,10 +78,6 @@
             <td><?= $nomor++; ?></td>
             <td><?= $data['nama_kategori']; ?></td>
             <td><?= $data['ket_kategori']; ?></td>
-<<<<<<< Updated upstream
-            <td>Ubah</td>
-            <td>Hapus</td>
-=======
             <td>
               <!-- Awal Modal Ubah -->
                 <!-- Button trigger modal -->
@@ -124,7 +115,7 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <input type="submit" value="Ubah" class="btn btn-primary">
+                        <input type="submit" value="Ubah Data" class="btn btn-warning">
                       </div>
                       </form>
                     </div>
@@ -161,7 +152,6 @@
 
               <!-- Akhit Modal Hapus -->
             </td>
->>>>>>> Stashed changes
          </tr>
       <?php
           }   
