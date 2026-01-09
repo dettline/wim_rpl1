@@ -7,7 +7,7 @@
 <!-- Awal Konten -->
 
 <?php
-  if(isset($_SESSION['level']))
+  if(isset($_SESSION['level'])=="admin")
   {
 ?>
     <div class="container vh-konten">
@@ -58,8 +58,13 @@
         $sql = "SELECT * FROM tb_kategori";
         $sql_eksekusi = mysqli_query($koneksi, $sql);
       ?>
+<<<<<<< Updated upstream
       <table class="table">
         <thead>
+=======
+      <table class="table mt-3">
+        <thead class="table-dark">
+>>>>>>> Stashed changes
           <tr>
             <th>No</th>
             <th>Nama Kategori</th>
@@ -78,8 +83,85 @@
             <td><?= $nomor++; ?></td>
             <td><?= $data['nama_kategori']; ?></td>
             <td><?= $data['ket_kategori']; ?></td>
+<<<<<<< Updated upstream
             <td>Ubah</td>
             <td>Hapus</td>
+=======
+            <td>
+              <!-- Awal Modal Ubah -->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalubah<?= $nomor; ?>">
+                  Ubah
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade"
+                id="modalubah<?= $nomor; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <form action="update_kategori.php" method="post">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Ubah Data <?= $data['nama_kategori']." | ID: ".$data['id_kategori']; ?></h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <label for="">Nama Kategori</label>
+                            <input type="hidden" name="id_kategori" value="<?= $data['id_kategori']; ?>">
+                            <input type="text" name="nama_kategori" id="" class="form-control mt-1" value="<?= $data['nama_kategori']; ?>">
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <label for="" class="mt-2">Deskripsi</label>
+                            <textarea name="ket_kategori" id="" class="form-control mt-1"><?= $data['ket_kategori']; ?></textarea>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <input type="submit" value="Ubah" class="btn btn-primary">
+                      </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              <!-- Akhir Modal Ubah -->
+            </td>
+
+            <td>
+              <!-- Awal Modal Hapus -->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalhapus<?= $nomor; ?>">
+                  Hapus
+                </button>
+
+                <!-- Modal Hapus -->
+                <div class="modal fade" id="modalhapus<?= $nomor; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header bg-danger text-light">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Hapus Kategori</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        Apakah kamu yakin ingin menghapus kategori <b> <?= $data['nama_kategori']; ?> </b>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                        <a href='hapus_kategori.php?id_kategori=<?= $data['id_kategori']; ?>' class='btn btn-danger'>Hapus</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              <!-- Akhit Modal Hapus -->
+            </td>
+>>>>>>> Stashed changes
          </tr>
       <?php
           }   
